@@ -29,7 +29,6 @@
 		          <li><a href="/stp/edituser">Users</a></li>
 		        </ul>
 		      </li>
-		      <li><a href="/stp/profile">Profile</a></li>
 		    </ul>
 		    <ul class="nav navbar-nav navbar-right">
 		      <li><a href="/stp/login/logout"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
@@ -40,25 +39,43 @@
 		
 		<section>
 
-		<h1>Todas las historias</h1>
-			<table class="table table-hover">
-			<thead><th>Id historia</th><th>Usuario</th><th>Path</th><th>Titulo</th><th>Sinopsis</th><th>Valor Medio</th></thead>
-              <?php for($i=0;$i<count($this->dataTable);$i++){ ?>
-                <tr onclick="location.href = '<?= APP_W.'story/get/user/'.$this->dataTable[$i]['users'].'/idstory/'.$this->dataTable[$i]['idstories'];?>'">
-                <?php $cont=0; ?>
-                <?php foreach($this->dataTable[$i] as $key=>$value) :?>
-                  	<?php if($cont==0){$id=$value;$cont++;} ?>
-                  	
-                        <td><?= $value; ?></td>
-                  
-                  <?php endforeach; ?>
-                  
-                  </tr>
-                <?php } ?>
-                
-            </table>
+		<h1>Perfil</h1>
+
+				<p>Nombre: <?= $this->dataTable[0]['usersname'] ?></p>
+				<p>Email: <?= $this->dataTable[0]['email'] ?></p>
+				<p>Contrasenya: <?= $this->dataTable[0]['password'] ?></p>
+            	
+            	<a href="<?= APP_W.'editprofile'?>" >Editar Perfil</a>
+            	
+            	<div id="map"></div>
 
         </section>
+
+		
+    <script>
+      function initMap() {
+        var myLatLng = {lat: 41.3, lng: 2.0167};
+
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 41.3, lng: 2.0167},
+          scrollwheel: false,
+          zoom: 12
+        });
+
+        //Create a marker and set it's position
+        var marker = new google.maps.Marker({
+        	map:map,
+        	position: myLatLng,
+        	title: 'Hola DAW!'
+        });
+
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKV4WgPhEzFpzLfELTbCxSCDj8p_ZrA0s&callback=initMap"
+    async defer></script>
+
 
 
 <?php 

@@ -18,6 +18,7 @@
 	 	 	// there is no instance?
 	 	 	if (!(self::$instance instanceof self)){
 	 	 		self::$instance=new self();
+	 	 		
 	 	 		return self::$instance;
 	 	 	}else{
 	 	 		return self::$instance;
@@ -60,7 +61,6 @@
 	 	 	$jsonStr=file_get_contents($file);
 	 	 	
 	 	 	$arrayJson=json_decode($jsonStr);
-                          
 	 	 	foreach ($arrayJson as $key => $value) {
 	 	 		$this->data[$key]=$value;
 	 	 	}

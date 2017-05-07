@@ -14,7 +14,7 @@
                 
                  public function reg($em, $pass, $usrname){
                      
-                        $sql="call storypub.sp_new_user(2, :email, :passwd, :usrname);";
+                        $sql="call sp_new_user(2, :email, :passwd, :usrname);";
 			$this->query($sql);
                         $this->bind(":email", $em);
                         $this->bind(":passwd", $pass);

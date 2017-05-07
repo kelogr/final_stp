@@ -11,6 +11,11 @@
     background-color: blue;
 }
 
+h1{
+    text-align: center;
+    padding: 30px;
+}
+
 nav{
     display: flex;
     justify-content: space-around;
@@ -27,15 +32,17 @@ ul{
     display: flex;
     align-items: center;
 }
-section{
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    font-size: 40px;
-    align-items: center;
+form{
+    width: 30%;
+    margin:auto;
 }
 
 footer{
-    display: flex;
-    justify-content: space-around;
+    
+    font-size: 20px;
+    font-weight: 900;
+    height: 70px;
+    display: flex !Important;
+    justify-content: center;
+    align-items: center;
 }

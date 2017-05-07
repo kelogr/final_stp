@@ -1,0 +1,35 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+#titulo{
+    display: flex;
+    justify-content: space-around;
+    margin: 0px;
+    padding: 30px;
+    background-color: blue;
+}
+
+section{
+    display: flex !Important;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    
+    margin-top: 50px;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#section-1, #section-2{
+    width: 40%;
+    
+}
+
+table{
+    margin-top: 15px;
+}
+

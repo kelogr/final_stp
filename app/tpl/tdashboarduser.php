@@ -9,13 +9,15 @@
     } 
 ?>
 <body>
+	 	
+
         <nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="navbar-brand" href="/stp/dashboard"><?= Session::get('users')['usersname'] ?></a>
+		      <a class="navbar-brand" href="/stp/dashboarduser"><?= Session::get('users')['usersname'] ?></a>
 		    </div>
 		    <ul class="nav navbar-nav">
-		      <li class="active"><a href="/stp/dashboard">Home</a></li>
+		      <li class="active"><a href="/stp/dashboarduser">Home</a></li>
 		      <li class="dropdown">
 		        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Add<span class="caret"></span></a>
 		        <ul class="dropdown-menu">
@@ -26,7 +28,7 @@
 		        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Edit<span class="caret"></span></a>
 		        <ul class="dropdown-menu">
 		          <li><a href="/stp/editstory">Story</a></li>
-		          <li><a href="/stp/edituser">Users</a></li>
+		          <li><a href="/stp/editprofile">Profile</a></li>
 		        </ul>
 		      </li>
 		      <li><a href="/stp/profile">Profile</a></li>
@@ -60,6 +62,7 @@
 
         </section>
 
+<br /></div>
 
 <?php 
 	include 'footer_common.php';

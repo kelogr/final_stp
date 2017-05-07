@@ -1,0 +1,140 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+section{
+    display: flex !Important;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    
+    margin-top: 50px;
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#section-1, #section-2{
+    width: 40%;
+    
+}
+
+#newstory{
+    margin-top:30px;
+}
+
+/*Toolbar*/
+
+
+  #toolbar [data-wysihtml-action] {
+    float: right;
+  }
+  
+  #toolbar,
+  textarea {
+    width: 100%;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    height: 280px;
+    border: 2px solid green;
+    font-family: Verdana;
+    font-size: 11px;
+  }
+  
+  textarea:focus {
+    color: black;
+    border: 2px solid black;
+  }
+  
+  .wysihtml-command-active {
+    font-weight: bold;
+  }
+  
+  [data-wysihtml-dialog] {
+    margin: 5px 0 0;
+    padding: 5px;
+    border: 1px solid #666;
+  }
+  
+  a[data-wysihtml-command-value="red"] {
+    color: red;
+  }
+  
+  a[data-wysihtml-command-value="green"] {
+    color: green;
+  }
+  
+  a[data-wysihtml-command-value="blue"] {
+    color: blue;
+  }
+  
+  code {
+    background: #ddd;
+    padding: 10px;
+    white-space: pre;
+    display: block;
+    margin: 1em 0;
+  }
+  
+  .toolbar {
+    display: block;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+  }
+  .toolbar a {
+    display: inline-block;
+    height: 1.7em;
+    border-radius: 3px;
+    font-size: 11px;
+    line-height: 1.7em;
+    text-decoration: none;
+    background: #e1e1e1;
+    border: 1px solid #ddd;
+    padding: 0 0.5em;
+    margin: 1px 0;
+  }
+  .toolbar a.active  {
+    background: #222;
+    color: white;
+  }
+  .toolbar .block { 
+    padding: 2px 3px;
+    display: inline-block;
+    background: #eee;
+    border-radius: 3px;
+    margin: 2px 2px 2px 0;
+  }
+  
+  .wysihtml-editor table td, .wysihtml-editor table th {
+      outline: 1px dotted #ddd;
+  }
+  .wysihtml-editor table .wysiwyg-tmp-selected-cell {
+    outline: 1px solid green;
+  }
+  
+  .toolbar .color-btn, .toolbar .bg-color-btn {
+    height: 1.7em;
+    width: 1.7em;
+    text-align: center;
+    border: 2px solid #ddd;
+    padding:0;
+    margin:0;
+    color: white;
+  }
+  
+  .toolbar .color-btn.active, .toolbar .bg-color-btn.active  {
+    border: 2px solid #333;
+  }

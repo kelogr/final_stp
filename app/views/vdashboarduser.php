@@ -4,11 +4,13 @@
 
 	use \X\Sys\View;
 	
-	class vHome extends View{
+	class vDashboarduser extends View{
 
 		function __construct($dataView,$dataTable=null){
 			parent::__construct($dataView,$dataTable);
-			$this->output= $this->render('thome.php');
+			$this->output= $this->render('tdashboarduser.php');
 			
 		}
+		
+		
 	}

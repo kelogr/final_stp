@@ -3,6 +3,7 @@
 	namespace X\App\Models;
 
 	use \X\Sys\Model;
+	use X\Sys\Session;
 
 	class mLogin extends Model{
 		public function __construct(){
@@ -14,7 +15,7 @@
                 
                 public function valemail($em){
                     
-			$sql="SELECT * FROM storypub.users WHERE email=:email"; //Preparem la sentencia.
+			$sql="SELECT * FROM users WHERE email=:email"; //Preparem la sentencia.
 			$this->query($sql);
                         $this->bind(":email", $em);
                          
@@ -35,21 +36,45 @@
                 
                  public function login($em, $pass){
 
-			$sql="SELECT * FROM storypub.users WHERE email=:email && password=:password";
-                  
-			$this->query($sql);
-                        $this->bind(":email", $em);
-                        $this->bind(":password", $pass);
-                         
-			$res=$this->execute();
-                        $result=$this->rowCount();
-                        
-			if($result){
-                            return $result;							
-			}else 
-                        {
-                            return -1;
-                            
-                        }
-		}
+					$sql="SELECT * FROM users WHERE email=:email && password=:password";
+		                  /*var_dump($sql);
+		                  die();*/
+					$this->query($sql);
+		                        $this->bind(":email", $em);
+		                        $this->bind(":password", $pass);
+		                         
+					$res=$this->execute();
+		                        $result=$this->rowCount();
+		                        
+		                        $user=$this->single();
+		                        
+					if($result==1){
+								
+		                        return $user;							
+					}else 
+		                        {
+		                            return -1;
+		                            
+		                        }
+				 }
+
+				 public function id($em){
+
+					$sql="SELECT idusers FROM users WHERE email=:email";
+		                  /*var_dump($sql);
+		                  die();*/
+					$this->query($sql);
+		            $this->bind(":email", $em);
+		                         
+					$res=$this->execute();
+		            $result=$this->single();
+		                        /*var_dump($result);
+		                        die();*/
+					if($result!=false){
+		                return $result['idusers'];							
+					}else 
+		            {
+		                return -1;        
+		         	}
+				 }
 	}

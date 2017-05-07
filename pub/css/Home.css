@@ -1,6 +1,7 @@
 *{
     padding: 0px;
     margin: 0px;
+
 }
 
 #titulo{
@@ -9,14 +10,6 @@
     margin: 0px;
     padding: 30px;
     background-color: blue;
-}
-
-nav{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 50px;
-
 }
 
 ul{
@@ -29,13 +22,25 @@ ul{
 }
 section{
     height: 400px;
-    display: flex;
+    display: flex !Important;
     justify-content: center;
-    font-size: 40px;
     align-items: center;
+    flex-direction: column;
+}
+
+section h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+section p{
+    text-align: center;
+    font-size: 40px;
+    color: black;
 }
 
 footer{
-    display: flex;
-    justify-content: space-around;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
 }

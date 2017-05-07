@@ -6,9 +6,9 @@
 	"dbconf":{
 		"driver":"mysql",
 		"dbhost":"localhost",
-		"dbuser":"root",
+		"dbuser":"klopez_root",
 		"dbpass":"linuxlinux",
-		"dbname":"storypub"
+		"dbname":"klopez_stp"
 	}
 
 }

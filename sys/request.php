@@ -23,13 +23,12 @@
 			//si es base no fem res,pero si
 			// no lo es fem array_shift una altra vegada
 			$dir=dirname($_SERVER['PHP_SELF']);
-			
+                       
 			if($array_query){
-                        if($dir=='/'.$array_query[0]){
-				array_shift($array_query);
-			}
-                        }
-						
+                            if($dir=='/'.$array_query[0]){
+                                    array_shift($array_query);
+                            }		
+                        }			
 			self::$query=$array_query;
 			
 		}

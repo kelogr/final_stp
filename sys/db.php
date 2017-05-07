@@ -6,12 +6,19 @@
 		static $instance;
 
 		public function __construct(){
-			$config=Registry::getInstance();
-			$dbconf=(array)$config->dbconf;
-			$dsn=$dbconf['driver'].':host='.$dbconf['dbhost'].';dbname='.$dbconf['dbname'];
-		 	$usr=$dbconf['dbuser'];
+			$config=Registry::getInstance();      
+            
+			$strdbconf='dbconf';
+			$dbconf=(array)$config->$strdbconf;
+                     
+			/*$dsn='mysql:host=localhost;dbname=klopez_storypub';
+		 	$usr= 'klopez_root';
+		 	$pwd='linuxlinux';*/
+
+		 	$dsn=$dbconf['driver'].':host='.$dbconf['dbhost'].';dbname='.$dbconf['dbname'];
+		 	$usr= $dbconf['dbuser'];
 		 	$pwd=$dbconf['dbpass'];
-                        
+
 			parent::__construct($dsn,$usr,$pwd);
 		}
 

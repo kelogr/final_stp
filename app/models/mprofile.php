@@ -3,21 +3,22 @@
 	namespace X\App\Models;
 
 	use \X\Sys\Model;
-
-	class mDashboard extends Model{
+	use X\Sys\Session;
+	class mProfile extends Model{
 		public function __construct(){
 			parent::__construct();
 			
             }
 
- 				/**
+            	/**
                 *
-                * Funcion para obtener todas las historias que se mostrar en la página principal
+                * Funcion que obtendremos los datos del usuario en concreto que ha iniciado sesión
                 *
                 */
 
-            public function getStory(){
-			$sql="SELECT * FROM stories";
+            public function getUser(){
+			$sql="SELECT * FROM users WHERE idusers = ".Session::get('users')['idusers'];
+			
 			$this->query($sql);
 
 			$res=$this->execute();
@@ -30,5 +31,4 @@
 			}
 
 			
- 
-	}
+}

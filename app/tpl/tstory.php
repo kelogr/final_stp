@@ -38,26 +38,19 @@
 		</nav>
 
 		
-		<section>
+		<section style="width: 70%; margin: auto; display: flex; flex-direction: column; justify-content: center;">
 
-		<h1>Todas las historias</h1>
-			<table class="table table-hover">
-			<thead><th>Id historia</th><th>Usuario</th><th>Path</th><th>Titulo</th><th>Sinopsis</th><th>Valor Medio</th></thead>
-              <?php for($i=0;$i<count($this->dataTable);$i++){ ?>
-                <tr onclick="location.href = '<?= APP_W.'story/get/user/'.$this->dataTable[$i]['users'].'/idstory/'.$this->dataTable[$i]['idstories'];?>'">
-                <?php $cont=0; ?>
-                <?php foreach($this->dataTable[$i] as $key=>$value) :?>
-                  	<?php if($cont==0){$id=$value;$cont++;} ?>
-                  	
-                        <td><?= $value; ?></td>
-                  
-                  <?php endforeach; ?>
-                  
-                  </tr>
-                <?php } ?>
-                
-            </table>
-
+			
+			<h2><?= $this->dataTable[0]['titulo'] ?></h2>
+			
+			<textarea cols="10" style="height: 500px;"><?= $this->dataTable[0]['sinopsis'] ?></textarea>
+			<form method="POST" action="/stp/story/valorar">
+			<lable>Valoracion media: </label><input type="text" value="<?= $this->dataTable[0]['medium_values'] ?>" DISABLED>
+			<label>   Tu valoración:  </label><input type="number" name="valoracion" id="valoracion">
+			<input type="submit" name="enviar" value="Valorar">
+			<input type="number" name="historia" id="historia" value="<?= $this->dataTable[0]['idstories'] ?>" style="visibility:hidden">
+			</form>
+			<div class="msg"></div>
         </section>
 
 
