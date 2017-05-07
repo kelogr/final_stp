@@ -49,9 +49,9 @@
         
           if($result==1){
             $this->ajax(array('msg'=>'Correcto'));
-            //header('Location:/stp/edituser');
+            header('Location:/stp/edituser');
                   
-          }else {$this->ajax(array('msg'=>'no'));/*header('Location:/stp/edituser');*/}
+          }else {$this->ajax(array('msg'=>'no'));header('Location:/stp/edituser');}
       }
 
       /**
